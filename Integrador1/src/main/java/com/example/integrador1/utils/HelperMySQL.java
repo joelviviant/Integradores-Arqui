@@ -110,7 +110,7 @@ public class HelperMySQL {
 
 
     private Iterable<CSVRecord> getData(String archivo) throws IOException {
-        String path = "src\\main\\resources\\" + archivo;
+        String path = "Integrador1/src/main/resources/" + archivo;
         Reader in = new FileReader(path);
         String[] header = {};  // Puedes configurar tu encabezado personalizado aquí si es necesario
         CSVParser csvParser = CSVFormat.EXCEL.withHeader(header).parse(in);
