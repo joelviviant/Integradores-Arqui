@@ -1,34 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.2">
-    <persistence-unit name="registro-estudiantes" transaction-type="RESOURCE_LOCAL">
-        <!-- Especificar las clases gestionadas por JPA -->
-        <class>com.example.integrador2.dao.Estudiante</class>
-        <class>com.example.integrador2.dao.Carrera</class>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             version="3.0">
+    <persistence-unit name="persistenceIntegrador2" transaction-type="RESOURCE_LOCAL">
 
-        <!-- Configuración de la conexión a la base de datos -->
+        <class>com.miapp.Estudiante</class>
+        <class>com.miapp.Carrera</class>
+        <class>com.miapp.Inscripcion</class>
+
+
         <properties>
-            <!-- JDBC URL de la base de datos -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/integrador2" />
 
-            <!-- Usuario y contraseña de la base de datos -->
-            <property name="javax.persistence.jdbc.user" value="root" />
-            <property name="javax.persistence.jdbc.password" value="" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/integrador2"/>
+            <property name="jakarta.persistence.jdbc.user" value="tester"/>
+            <property name="jakarta.persistence.jdbc.password" value="password"/>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 
-            <!-- Driver JDBC de MySQL -->
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 
-            <!-- Dialecto de Hibernate para MySQL -->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
-
-            <!-- Opciones de generación automática del esquema -->
-            <property name="hibernate.hbm2ddl.auto" value="update" />
-            <!-- otras opciones para hbm2ddl.auto: validate, create, create-drop, update -->
-
-            <!-- Mostrar las consultas SQL en consola (opcional, útil para debug) -->
-            <property name="hibernate.show_sql" value="true" />
-
-            <!-- Formatear las consultas SQL en consola (opcional) -->
-            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
         </properties>
     </persistence-unit>
 </persistence>
